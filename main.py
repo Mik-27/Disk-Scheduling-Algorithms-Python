@@ -1,6 +1,6 @@
 import xlrd
 from fcfs import calcFCFS
-from scan import calcScan
+from scan import calcSCAN
 from sstf import calcSSTF
 
 
@@ -19,7 +19,7 @@ def diskSchedduling():
 
     fcfs = calcFCFS(seek_time, head)
     sstf = calcSSTF(seek_time, head)
-    scan = calcScan(seek_time, head)
+    scan = calcSCAN(seek_time, head)
 
     print("Seek Distance for Disk Scheduling Algorithms: ")
     print("FCFS: ", fcfs)

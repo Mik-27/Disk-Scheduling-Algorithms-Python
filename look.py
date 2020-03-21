@@ -1,5 +1,7 @@
-# Create a sequence according to the Scan Algorithms and then return it
-# to simply calculate the difference and get total seek time
+# Create a sequence according to the Look Algorithm and then return
+# it to simply calculate the difference and get total seek time
+# 'Look' is similar to 'Scan' except it does not go upto the boundary of the disk.
+# It changes at the highest or lowest seek time depending upon the direction of the pin.
 # Direction of pin assumed to be to the left.
 
 
@@ -12,7 +14,6 @@ def arrangeArray(arr, head):
             lower.append(i)
         if i > head:
             higher.append(i)
-    lower.append(0)
     lower = sorted(lower, reverse=True)             # Descending order
     higher = sorted(higher)                         # Ascending order
     # Merge both to get the final sequence.
@@ -20,7 +21,7 @@ def arrangeArray(arr, head):
     return seq
 
 
-def calcSCAN(arr, head):
+def calcLOOK(arr, head):
     seek_time = 0
     if len(arr) == 0:
         return
